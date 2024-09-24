@@ -1,15 +1,19 @@
 import torch.nn as nn
 import torch
 import numpy as np
-from models.spectral_normalization import SpectralNorm
+from ..models.spectral_normalization import SpectralNorm
+from ..models.unet2 import Unet
 from torch.autograd import Variable
-Tensor = torch.cuda.FloatTensor 
 import torch.autograd as autograd
 import scipy.io
-import argparse, json, glob, os, sys
-from models.unet2 import Unet
-
+import argparse
+import json
+import glob
+import os
 from pathlib import Path
+
+Tensor = torch.cuda.FloatTensor 
+
 _script_dir = Path( __file__ ).parent
 _root_dir = _script_dir.parent
 

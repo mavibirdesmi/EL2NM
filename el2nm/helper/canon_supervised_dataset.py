@@ -1,4 +1,4 @@
-from helper.canon_utils import read_16bit_raw, raw_to_4
+from .canon_utils import read_16bit_raw, raw_to_4
 import torch
 import sys, os, glob
 import numpy as np
