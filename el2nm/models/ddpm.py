@@ -8,8 +8,8 @@ import helper
 from models.unet import DiffusionUNet, Gauss_Forward
 from PIL import Image
 
-import helper.canon_supervised_dataset as dset
-import helper.gan_helper_fun as gh
+from ..helper import canon_supervised_dataset as dset
+from ..helper import gan_helper_fun as gh
 
 from torchvision.transforms.functional import crop
 

@@ -1,10 +1,9 @@
 import torch
-import helper
 import os
 from PIL import Image
 import numpy as np
 
-import helper.gan_helper_fun as gh
+from ..helper import gan_helper_fun as gh
 
 
 def data_transform(X):

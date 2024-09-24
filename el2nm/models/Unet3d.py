@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from models.modules import ConvBlock3d
+from .modules import ConvBlock3d
 
 
 class Unet3d(nn.Module):
