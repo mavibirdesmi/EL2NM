@@ -4,10 +4,11 @@ import numpy as np
 import torch
 import torch.nn as nn
 import torch.backends.cudnn as cudnn
-import helper
-from models.unet import DiffusionUNet, Gauss_Forward
+
+from ..models.unet import DiffusionUNet, Gauss_Forward
 from PIL import Image
 
+from .. import helper
 from ..helper import canon_supervised_dataset as dset
 from ..helper import gan_helper_fun as gh
 

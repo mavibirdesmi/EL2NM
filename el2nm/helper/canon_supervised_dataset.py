@@ -4,7 +4,7 @@ import sys, os, glob
 import numpy as np
 import scipy.io
 from PIL import Image
-import helper.post_processing as pp
+from ..helper import post_processing as pp
 import time
 import cv2
 from skimage import exposure

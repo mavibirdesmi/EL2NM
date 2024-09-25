@@ -7,7 +7,7 @@ import numpy as np
 import scipy.io
 
 from pathlib import Path
-_script_dir = Path( __file__ ).parent
+_script_dir = Path( __file__ ).parent.parent
 _root_dir = _script_dir.parent
 
 

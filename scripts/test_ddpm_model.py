@@ -15,7 +15,7 @@ import torch.backends.cudnn as cudnn
 import torch.utils.data
 os.environ["CUDA_VISIBLE_DEVICES"] = '0, 1, 2, 3'
 import numpy as np
-from models import ddpm
+from el2nm.models import ddpm
 import el2nm.helper.canon_supervised_dataset as dset
 
 
