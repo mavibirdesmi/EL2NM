@@ -9,6 +9,7 @@ data:
     grid_r: 16
     conditional: True
 
+device: "cuda"
 
 model:
     in_channels: 3
