@@ -279,6 +279,31 @@ class DenoisingDiffusion(object):
         self.sample(test_loader, self.step, t)
         
 
+    @torch.no_grad()
+    def sample_one (self, im_clean : torch.Tensor, im_noisy : torch.Tensor, step, t):
+            # N, H, W, C
+            # 1, N, C, H, W
+            # C, N, 1, H, W
+            # noisy_raw = torch.transpose(im_noisy, 0, 2).squeeze(2).to(self.device)
+            print(im_clean.shape)
+            clean_raw = torch.transpose(im_clean, 0, 2).squeeze(2).to(self.device)
+            print(clean_raw.shape)
+
+            gauss = clean_raw.clone()
+            for j in range(self.num_timesteps):
+                gauss = self.forward_process.forward(gauss, j)
+
+            direct_out = None
+
+            h = self.num_timesteps - 30
+            while(h):
+                step = torch.full((16,), self.num_timesteps - 10, dtype=torch.long).cuda()
+                out_put, cur_direct_out = self.sample_one_step(clean_raw, gauss, step, t)
+                if direct_out is None:
+                    direct_out = cur_direct_out
+                gauss = out_put
+                h = h-1
+            return out_put
 
     def sample(self, val_loader, step, t):
         with torch.no_grad():
